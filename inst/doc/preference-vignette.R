@@ -1,7 +1,7 @@
+## ----message=F,warning=F,eval=FALSE--------------------------------------
+#  install.packages("preference")
+
 ## ----message=F,warning=F-------------------------------------------------
-if (!require(devtools)) install.packages("devtools", repos="https://cloud.r-project.org")
-library(devtools)
-install_github("kaneplusplus/preference")
 library(preference)
 
 ## ------------------------------------------------------------------------

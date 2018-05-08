@@ -1,8 +1,7 @@
 Package: preference
 Type: Package
-Title: 2-Stage Clinical Trial Design and Analysis
-Version: 0.1.2
-Date: 2017-06-14
+Title: 2-Stage Preference Trial Design and Analysis
+Version: 0.2.2
 Authors@R: c(person(given="Briana", family="Cameron", email="briana.cameron@yale.edu", role=c("aut", "cph")), person(given="Denise", family="Esserman", email="denise.esserman@yale.edu", role="ctb"), person(given="Michael",family="Kane",email="michael.kane@yale.edu",role=c("cre", "ctb")))
 URL: https://github.com/kaneplusplus/preference
 BugReports: https://github.com/kaneplusplus/preference/issues
@@ -14,16 +13,15 @@ Description: Design and analyze two-stage randomized trials with a continuous
     provided to test each effect using either summary data (i.e. means, 
     variances) or raw study data.
 License: LGPL-2
-Suggests: knitr, testthat, ggplot2,
-VignetteBuilder: knitr
+Imports: ggplot2, tidyr
+Suggests: testthat
 RoxygenNote: 6.0.1
 LazyData: true
 NeedsCompilation: no
-Packaged: 2017-11-27 20:41:07 UTC; mike
+Packaged: 2018-05-08 19:54:26 UTC; mike
 Author: Briana Cameron [aut, cph],
   Denise Esserman [ctb],
   Michael Kane [cre, ctb]
 Maintainer: Michael Kane <michael.kane@yale.edu>
-X-CRAN-Comment: Archived on 2017-11-28 for policy violation.
 Repository: CRAN
-Date/Publication: 2017-11-28 17:39:40 UTC
+Date/Publication: 2018-05-08 20:05:32 UTC

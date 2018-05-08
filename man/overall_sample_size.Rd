@@ -5,7 +5,7 @@
 \title{Overall Sample Size}
 \usage{
 overall_sample_size(power, phi, sigma2, delta_pi, delta_nu, delta_tau,
-  alpha = 0.05, theta = 0.5, xi = 1, nstrata = 1)
+  alpha = 0.05, theta = 0.5, xi = 1, nstrata = 1, k = 1)
 }
 \arguments{
 \item{power}{desired study power. Should be numeric value between 0 and 1.}
@@ -36,20 +36,16 @@ sum of vector should be 1. All vector elements should be numeric
 values between 0 and 1. Default is 1 (i.e. unstratified design).}
 
 \item{nstrata}{number of strata. Default is 1 (i.e. unstratified design).}
+
+\item{k}{the ratio of treatment A to treatment B in the random arm. 
+(default 1, i.e. equal distribution to the two treatments in the 
+random arm)}
 }
 \description{
 Calculates the sample size required to detect a given set of effects 
 in a two-stage randomized clinical trial. Returns the largest
 of the required sample sizes for a given set of treatment, selection, and 
 preference effects.
-}
-\examples{
-# Unstratified
-overall_sample_size(power=0.8, phi=0.5, sigma2=1, delta_pi=1, delta_nu=0.5, 
-delta_tau=1.5)
-# Stratified
-overall_sample_size(power=0.8, phi=c(0.5,0.4), sigma2=c(1, 1), delta_pi=1, 
-delta_nu=0.5, delta_tau=1.5, xi=c(0.3,0.7),nstrata=2)
 }
 \references{
 Turner RM, et al. (2014). "Sample Size and Power When Designing
@@ -58,6 +54,7 @@ Turner RM, et al. (2014). "Sample Size and Power When Designing
 (\href{https://www.ncbi.nlm.nih.gov/pubmed/24695962}{PubMed})
 
 Cameron B, Esserman D (2016). "Sample Size and Power for a 
-Stratified Doubly Randomized Preference Design." \emph{Stat Methods Med Res}. 
+Stratified Doubly Randomized Preference Design." 
+\emph{Stat Methods Med Res}. 
 (\href{https://www.ncbi.nlm.nih.gov/pubmed/27872194}{PubMed})
 }

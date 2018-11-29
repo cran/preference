@@ -44,21 +44,21 @@ test_that("Treatment sample size checking works", {
 })
 
 test_that("Preference effect size checking works", {
-  expect_error(preference.trial(pref_ss=100, pref_effect=-1, selection_ss=100,
+  preference.trial(pref_ss=100, pref_effect=-1, selection_ss=100,
     selection_effect=1, treatment_ss=100, treatment_effect=1,
-    sigma2=1, pref_prop=0.6))
+    sigma2=1, pref_prop=0.6)
 })
 
 test_that("Treatment effect size checking works", {
-  expect_error(preference.trial(pref_ss=100, pref_effect=1, selection_ss=100,
+  preference.trial(pref_ss=100, pref_effect=1, selection_ss=100,
     selection_effect=1, treatment_ss=100, treatment_effect=-1,
-    sigma2=1, pref_prop=0.6))
+    sigma2=1, pref_prop=0.6)
 })
 
 test_that("Selection effect size checking works", {
-  expect_error(preference.trial(pref_ss=100, pref_effect=1, selection_ss=100,
+  preference.trial(pref_ss=100, pref_effect=1, selection_ss=100,
     selection_effect=-1, treatment_ss=100, treatment_effect=1,
-    sigma2=1, pref_prop=0.6))
+    sigma2=1, pref_prop=0.6)
 })
 
 test_that("Alpha checking works", {
@@ -253,13 +253,15 @@ test_that("effects_from_means function works", {
 test_that("preference stratified and unstratified aren't the same", {
   outcome <- c(10, 8, 6, 10, 5, 8, 7, 6, 10, 12, 11, 6, 8, 10, 5, 7, 9, 12, 6,
   8, 9, 10, 7, 8, 11)
-  arm <- c(rep(FALSE, 13), rep(TRUE, 12))
+  arm <- c(rep("choice", 13), rep("random", 12))
   treatment <- c(rep(1, 5), rep(2, 8), rep(1, 6), rep(2, 6))
-  d <- data.frame(outcome=outcome, treatment=treatment, arm=arm)
+  d <- data.frame(outcome = outcome, treatment = treatment, arm = arm)
   unstrat_pref <- preference(outcome ~ treatment:arm, d)
 
-  strata <- c(1,1,2,2,2,1,1,1,1,2,2,2,2,1,1,1,2,2,2,1,1,1,2,2,2)
-  d <- data.frame(outcome=outcome, treatment=treatment, arm=arm, strata=strata)
+  strata <- c(1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1,
+              1, 2, 2, 2)
+  d <- data.frame(outcome = outcome, treatment = treatment, arm = arm,
+                  strata = strata)
   strat_pref <- preference(outcome ~ treatment:arm|strata, d, alpha=0.1)
 
   expect_false(

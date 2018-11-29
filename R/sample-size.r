@@ -27,6 +27,7 @@
 #' @param k the ratio of treatment A to treatment B in the random arm. 
 #'        (default 1, i.e. equal distribution to the two treatments in the 
 #'        random arm)
+#' @keywords internal
 #' @references Turner RM, et al. (2014). "Sample Size and Power When Designing
 #'  a Randomized Trial for the Estimation of Treatment, Selection, and 
 #'  Preference Effects." \emph{Medical Decision Making}, \strong{34}:711-719.
@@ -35,7 +36,18 @@
 #' Stratified Doubly Randomized Preference Design." 
 #' \emph{Stat Methods Med Res}. 
 #' (\href{https://www.ncbi.nlm.nih.gov/pubmed/27872194}{PubMed})
-overall_sample_size <- function(power, phi, sigma2, delta_pi, delta_nu, 
+overall_sample_size <- function(power, phi, delta_pi, delta_nu, 
+  delta_tau, sigma2, alpha=0.05, theta=0.5, xi=1, nstrata=1, k=1, dist="norm") {
+  ## Write this
+  if (dist == "norm") {
+    overall_sample_size_norm(power, phi, sigma2, delta_pi, delta_nu,
+                             delta_tau, alpha, theta, xi, nstrata, k)
+  } else {
+    stop('Unsupported "dist" argument.')
+  }
+}
+
+overall_sample_size_norm <- function(power, phi, sigma2, delta_pi, delta_nu, 
   delta_tau, alpha=0.05, theta=0.5, xi=1, nstrata=1, k=1) {
   
   zbeta <- qnorm(power)
@@ -97,6 +109,7 @@ overall_sample_size <- function(power, phi, sigma2, delta_pi, delta_nu,
 #' @param nstrata number of strata. Default is 1 (i.e. unstratified design).
 #' @param k the ratio of treatment A to treatment B in the random arm
 #' (default 1).
+#' @keywords internal
 #' @importFrom stats pnorm
 #' @references Turner RM, et al. (2014). "Sample Size and Power When Designing
 #'  a Randomized Trial for the Estimation of Treatment, Selection, and 

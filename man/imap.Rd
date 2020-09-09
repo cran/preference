@@ -35,6 +35,6 @@ randomised trial." \emph{BMJ}, \strong{340}:b4491.
 McCaffery et al. (2011) "Determining the Impact of Informed 
 Choice: Separating Treatment Effects from the Effects of Choice and Selection
 in Randomized Trials." \emph{Med Decis Making}, \strong{31}(2):229-236.
-(\href{https://www.ncbi.nlm.nih.gov/pubmed/21041538}{PubMed})
+(\href{https://pubmed.ncbi.nlm.nih.gov/21041538}{PubMed})
 }
 \keyword{data}

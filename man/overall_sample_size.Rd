@@ -63,11 +63,11 @@ preference effects.
 Turner RM, et al. (2014). "Sample Size and Power When Designing
  a Randomized Trial for the Estimation of Treatment, Selection, and 
  Preference Effects." \emph{Medical Decision Making}, \strong{34}:711-719.
-(\href{https://www.ncbi.nlm.nih.gov/pubmed/24695962}{PubMed})
+(\href{https://pubmed.ncbi.nlm.nih.gov/24695962}{PubMed})
 
 Cameron B, Esserman D (2016). "Sample Size and Power for a 
 Stratified Doubly Randomized Preference Design." 
 \emph{Stat Methods Med Res}. 
-(\href{https://www.ncbi.nlm.nih.gov/pubmed/27872194}{PubMed})
+(\href{https://pubmed.ncbi.nlm.nih.gov/27872194}{PubMed})
 }
 \keyword{internal}
